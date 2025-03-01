@@ -19,16 +19,13 @@ with open(r"C:\Users\kunal\ProjectMinor\scalernew.pkl", 'rb') as file:
 import re
 
 def clean_text(text):
-    # 1️⃣ Remove URLs (http, https, www)
+    # 1️⃣ Remove HTML tags (like <div>, <p>, etc.)
+    text = BeautifulSoup(text, "html.parser").get_text()
+    # 2️⃣ Remove URLs (http, https, www)
     text = re.sub(r'http[s]?://\S+', '', text)  # Removes links starting with http/https
     text = re.sub(r'www\.\S+', '', text)        # Removes links starting with www
-    
-    # 2️⃣ Remove usernames (@username)
+    # 3️⃣ Remove usernames (@username)
     text = re.sub(r'@\w+', '', text)  # Removes @mentions
-    
-    # 3️⃣ Remove HTML tags (like <div>, <p>, etc.)
-    text = BeautifulSoup(text, "html.parser").get_text()
-    
     # 4️⃣ Remove special characters (optional)
     text = re.sub(r'[^a-zA-Z\s]', '', text)
     
