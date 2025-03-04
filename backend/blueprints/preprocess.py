@@ -100,6 +100,7 @@ def process():
     if summary_data.status_code == 200:
         summarize_response = summary_data.json()
         summarize = summarize_response.get('summarize', "Summary not available")
+        print(summarize) 
     else:
         summarize = "Unable to generate summary"
 

@@ -46,7 +46,9 @@ const App = () => {
       const positive = data.positive;
       const negative = data.negative;
       const summarize = data.summarize;
-      setSummary(summarize);
+     
+        setSummary(summarize);
+      
       console.log("API Response:", data); // Debugging step
       console.log("LDA Topics:", lda_result);
       setSentimentData([

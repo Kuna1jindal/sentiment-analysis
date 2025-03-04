@@ -5,6 +5,7 @@ import os
 import requests
 from blueprints.preprocess import preprocess_bp 
 from blueprints.summarize import summarize_bp
+# from blueprints.summarizex import summarizex_bp
 from dotenv import load_dotenv  # Import dotenv
 # Load environment variables from .env file
 load_dotenv()
@@ -13,6 +14,7 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for frontend requests
 app.register_blueprint(preprocess_bp, url_prefix='/api')  
 app.register_blueprint(summarize_bp, url_prefix='/api')  
+# app.register_blueprint(summarizex_bp, url_prefix='/api')  
 
 # Load YouTube Data API Key securely from environment variables
 YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
