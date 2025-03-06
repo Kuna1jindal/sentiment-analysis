@@ -16,7 +16,6 @@ with open(r"C:\Users\kunal\ProjectMinor\SVCModelnew.pkl", 'rb') as file:
 with open(r"C:\Users\kunal\ProjectMinor\scalernew.pkl", 'rb') as file:
     scaler = pickle.load(file)
 
-import re
 
 def clean_text(text):
     # 1️⃣ Remove HTML tags (like <div>, <p>, etc.)

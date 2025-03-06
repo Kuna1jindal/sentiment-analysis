@@ -106,7 +106,7 @@ const App = () => {
           }}
         >
           {loading ? (
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1,color:"white" }}>
               <CircularProgress size={20} color="inherit" />
               Analyzing...
             </Box>
